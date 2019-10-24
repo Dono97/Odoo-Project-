@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+  <menuitem id="results_management" name="Results Management"/>
+
+  <!-- Action to open Module Creation -->
+  <act_window id="action_upload_results"
+       name="Upload Results"
+       res_model="result.module"
+       view_mode="tree,form"
+/>
+     <!-- Menu item to open Create a Module -->
+  <menuitem id="menu_upload_results"
+       name="Upload Results"
+       parent="results_management"
+       action="action_upload_results"
+/>
+
+<!-- Action to open Program Creation -->
+<act_window id="action_view_transcripts"
+     name="View Transcripts"
+     res_model="transcript.student"
+     view_mode="form"
+
+/>
+   <!-- Menu item to open Program Creation -->
+<menuitem id="menu_view_transcripts"
+     name="View Transcripts"
+     parent="results_management"
+     action="action_view_transcripts"
+/>
+
+</odoo>

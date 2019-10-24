@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+   <odoo>
+     <!-- Form view for creating a new module -->
+     <record id="view_form_module" model="ir.ui.view">
+       <field name="name">Module View</field>
+       <field name="model">module.program</field>
+       <field name="arch" type="xml">
+         <form string="Module">
+           <header>
+           </header>
+           <sheet>
+             <group>
+               <field name="name" />
+               <field name="year" />
+               <field name="code" />
+
+             </group>
+             <div class="oe_right compute_module_code">
+               <button name="compute_module_code" type="object" string="Generate Module Code" />
+             </div>
+
+           </sheet>
+         </form>
+       </field>
+     </record>
+     <!-- Tree view to display the list of existing modules -->
+     <record id="view_tree_module" model="ir.ui.view">
+       <field name="name">Module Tree</field>
+       <field name="model">module.program</field>
+       <field name="arch" type="xml">
+         <tree>
+               <field name="name" />
+               <field name="year" />
+               <field name="code" />
+         </tree>
+       </field>
+     </record>
+</odoo>

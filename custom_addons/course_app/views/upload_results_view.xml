@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+   <odoo>
+     <!-- Form view for uploading results -->
+     <record id="view_form_upload_results" model="ir.ui.view">
+       <field name="name">Upload Results View</field>
+       <field name="model">result.module</field>
+       <field name="arch" type="xml">
+         <form string="Upload results">
+           <group>
+             <field name="student_result_id" widget="Selection"/>
+             <field name="module_result_id" widget="Selection"/>
+             <field name="value"/>
+           </group>
+        </form>
+       </field>
+     </record>
+
+     <!-- Tree view to display the list of uploaded results -->
+     <record id="view_tree_upload_results" model="ir.ui.view">
+       <field name="name">Result Tree</field>
+       <field name="model">result.module</field>
+       <field name="arch" type="xml">
+         <tree>
+               <field name="student_result_id" />
+               <field name="module_result_id" />
+               <field name="value"/>
+               <field name ="pass_grade"/>
+         </tree>
+       </field>
+     </record>
+
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+   <odoo>
+     <!-- Form view for creating a new student -->
+     <record id="view_form_student" model="ir.ui.view">
+       <field name="name">Student View</field>
+       <field name="model">student.user</field>
+       <field name="arch" type="xml">
+         <form string="Student">
+           <group>
+             <field name="first_name" />
+             <field name="last_name" />
+             <field name="program_student_id" widget="Selection"/>
+             <field name="student_number" />
+           </group>
+           <div class="oe_top_right _compute_stu_num">
+            <button name="compute_stu_num" type="object" string="Generate Student Number" invisible="1"/>
+            <field name="image" widget="image"/>
+          </div>
+          <div class="oe_top_right _add_student">
+           <button name="add_student" type="object" string="Add Student"/>
+         </div>
+         </form>
+       </field>
+     </record>
+
+     <!-- Tree view to display the list of existing students -->
+     <record id="view_tree_student" model="ir.ui.view">
+       <field name="name">Module Tree</field>
+       <field name="model">student.user</field>
+       <field name="arch" type="xml">
+         <tree>
+               <field name="first_name" />
+               <field name="last_name" />
+               <field name="student_number" />
+               <!-- <field name="image"/> -->
+         </tree>
+       </field>
+     </record>
+
+
+</odoo>
