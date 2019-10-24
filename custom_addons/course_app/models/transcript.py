@@ -3,7 +3,7 @@ from odoo import fields, models, api
 class Transcript(models.Model):
     _name = 'transcript.student'
     _description = 'Transcript'
-    user_id = fields.Many2one('res.users', string='User', readonly=True, states={'draft': [('readonly', False)]}, default=lambda self: self.env.user)
+    user_id = fields.Many2one('res.users', string='User', readonly=True, states={'draft': [('readonly', False)]}, default=lambda self: self.env.uid)
 
 
     #Relationships

@@ -37,20 +37,22 @@
                     (4, ref('base.user_admin'))]"/>
      </record>
 
-     <record id="user_student_rule" model="ir.rule">
+     <!-- Attempted record rules but could not match user_id to logged in user :( -->
+
+     <!-- <record id="user_student_rule" model="ir.rule">
        <field name="name">Transcript User Access</field>
        <field name="model_id"
               ref="model_student_user"/>
        <field name="domain_force">[('user_id','=',user.id)]</field>
        <field name="groups" eval="[(4,ref('results_student_user'))]"/>
-     </record>
+     </record> -->
 
-     <record id="user_result_rule" model="ir.rule">
+     <!-- <record id="user_result_rule" model="ir.rule">
        <field name="name">Transcript User Access</field>
        <field name="model_id"
               ref="model_result_module"/>
        <field name="domain_force">[('user_id','=',user.id)]</field>
        <field name="groups" eval="[(4,ref('results_student_user'))]"/>
-     </record>
+     </record> -->
 
    </odoo>

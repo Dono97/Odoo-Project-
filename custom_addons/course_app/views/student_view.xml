@@ -32,6 +32,7 @@
                <field name="first_name" />
                <field name="last_name" />
                <field name="student_number" />
+               <field name="email"/>
                <!-- <field name="image"/> -->
          </tree>
        </field>

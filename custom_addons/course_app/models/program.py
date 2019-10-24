@@ -12,4 +12,4 @@ class Program(models.Model):
 
     #Relationships
     student_program_id = fields.One2many('student.user', 'program_student_id', string='Student')
-    module_program_id = fields.One2many('module.program','program_module_id', string='Module')
+    module_program_id = fields.One2many('module.program','program_module_id', string='Module', required='True')

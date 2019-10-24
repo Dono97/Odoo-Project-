@@ -38,6 +38,7 @@
                <field name="last_name" />
                <field name="staff_number" />
                <field name="office_number" />
+               <field name="email"/>
          </tree>
        </field>
      </record>

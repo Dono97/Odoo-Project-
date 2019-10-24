@@ -10,10 +10,17 @@ class Lecturer(models.Model):
     staff_number = fields.Char('Staff Number', compute='compute_staff_num', store=True)
     image = fields.Binary('Cover')
     name = fields.Char('Name', compute='computer_name')
+    email = fields.Char('Email Address', compute = 'compute_email', store=True)
 
 
 #Relationships
     module_lecturer_id = fields.One2many('module.program', 'lecturer_module_id', string='Module')
+
+    @api.depends('staff_number')
+    def compute_email(self):
+        for rec in self:
+            rec.email = str(rec.staff_number) + '@cwc.ac.za'
+            email = rec.email
 
     #Function to display staff numbers instead of ......
     @api.depends('staff_number')
