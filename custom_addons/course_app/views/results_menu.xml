@@ -16,6 +16,20 @@
 />
 
 <!-- Action to open Program Creation -->
+<act_window id="action_view_classlist"
+     name="Class List View"
+     res_model="list.module"
+     view_mode="form"
+
+/>
+   <!-- Menu item to open Program Creation -->
+<menuitem id="menu_view_classlist"
+     name="Class List View"
+     parent="results_management"
+     action="action_view_classlist"
+/>
+
+<!-- Action to open Program Creation -->
 <act_window id="action_view_transcripts"
      name="View Transcripts"
      res_model="transcript.student"
@@ -28,5 +42,7 @@
      parent="results_management"
      action="action_view_transcripts"
 />
+
+
 
 </odoo>

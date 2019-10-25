@@ -1,23 +1,88 @@
-<?xml version="1.0"?>
-<odoo>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <odoo>
     <data>
-        <!-- <template id="listing"> -->
-        <!--   <ul> -->
-        <!--     <li t-foreach="objects" t-as="object"> -->
-        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
-        <!--         <t t-esc="object.display_name"/> -->
-        <!--       </a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </template> -->
-        <!-- <template id="object"> -->
-        <!--   <h1><t t-esc="object.display_name"/></h1> -->
-        <!--   <dl> -->
-        <!--     <t t-foreach="object._fields" t-as="field"> -->
-        <!--       <dt><t t-esc="field"/></dt> -->
-        <!--       <dd><t t-esc="object[field]"/></dd> -->
-        <!--     </t> -->
-        <!--   </dl> -->
-        <!-- </template> -->
+
+      <template id="transcript_request" name="Transcript Request">
+        <t t-call="website.layout">
+          <div class="container">
+            <h1>Transcript</h1>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Module</th>
+                  <th>Result</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="objects" t-as="obj">
+                  <tr>
+                    <td><t t-esc="obj.name"/></td>
+                  </tr>
+                </t>
+              </tbody>
+            </table>
+          </div>
+        </t>
+      </template>
+
     </data>
+</odoo> -->
+
+<odoo>
+  <template id="transcript_request" name="Transcript">
+    <div id="wrap" class="container" style="align-content:center;">
+      <h1>Transcript</h1>
+       <h2>
+        <t t-foreach="student" t-as="student">
+          <div class="row">
+            Name:
+            <span t-field="student.first_name" />
+            <span t-field="student.last_name" />
+          </div>
+        </t>
+       </h2>
+       <h2>
+        <t t-foreach="student" t-as="student">
+          <div class="row">
+            Student Number:
+            <span t-field="student.student_number" />
+
+          </div>
+        </t>
+       </h2>
+       <h2>
+        <t t-foreach="student" t-as="student">
+          <div class="row">
+            Program:
+            <span t-field="student.program_student_id" />
+          </div>
+        </t>
+       </h2>
+       <table border="1" style="width:100%;">
+            <thead>
+              <tr style="font-weight:bold;">
+                <th>Module</th>
+                <th>Code</th>
+                <th>Lecturer</th>
+                <th>Result</th>
+                <th>Grade</th>
+              </tr>
+              <tbody>
+                <t t-foreach="mark" t-as="mark">
+                  <tr>
+                    <td><span t-field="mark.module_result_id"/></td>
+                    <td><span t-field="mark.module_result_id.code" /></td>
+                    <td><span t-field="mark.module_result_id.lecturer_module_id.email" /></td>
+                    <td><span t-field="mark.value" /></td>
+                    <td><span t-field="mark.pass_grade" /></td>
+                  </tr>
+                </t>
+
+              </tbody>
+            </thead>
+          </table>
+    </div>
+  </template>
 </odoo>

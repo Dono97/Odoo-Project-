@@ -23,8 +23,10 @@
          <tree>
                <field name="student_result_id" />
                <field name="module_result_id" />
-               <field name="value"/>
-               <field name ="pass_grade"/>
+               <field name="value" />
+               <field name ="pass_grade" /> 
+               <!-- <field name ="pass_grade" invisible="context.get('base.results_student_user') != True"/>  -->
+
          </tree>
        </field>
      </record>

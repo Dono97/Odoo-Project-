@@ -8,3 +8,4 @@ from . import module
 from . import result
 from . import lecturer
 from . import transcript
+from . import classlist

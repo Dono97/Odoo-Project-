@@ -9,8 +9,8 @@
        <field name="name">Student</field>
        <field name="category_id"
               ref="module_course_app_category"/>
-       <field name="implied_ids"
-              eval="[(4, ref('base.group_user'))]"/>
+       <!-- <field name="implied_ids"
+              eval="[(4, ref('base.group_user'))]"/> -->
      </record>
 
      <!-- Course Management Lecturer Group -->
@@ -18,11 +18,11 @@
       <field name="name">Lecturer</field>
       <field name="category_id"
              ref="module_course_app_category"/>
-      <field name="implied_ids"
+      <!-- <field name="implied_ids"
              eval="[(4, ref('base.group_user'))]"/>
       <field name="users"
              eval="[(4, ref('base.user_root')),
-                  (4, ref('base.user_admin'))]"/>
+                    (4, ref('base.user_admin'))]"/> -->
      </record>
 
      <!-- Course Management Admin Group -->
@@ -30,12 +30,14 @@
       <field name="name">Admin</field>
       <field name="category_id"
              ref="module_course_app_category"/>
-      <field name="implied_ids"
+      <!-- <field name="implied_ids"
              eval="[(4, ref('base.group_user'))]"/>
       <field name="users"
              eval="[(4, ref('base.user_root')),
-                   (4, ref('base.user_admin'))]"/>       
+                    (4, ref('base.user_admin'))]"/> -->
      </record>
+
+  <!-- Attempted record rules but could not match user_id to logged in user :( -->
 
      <!-- <record id="user_transcript_rule" model="ir.rule">
        <field name="name">Transcript User Access</field>

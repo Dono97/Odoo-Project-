@@ -16,6 +16,7 @@ class Lecturer(models.Model):
 #Relationships
     module_lecturer_id = fields.One2many('module.program', 'lecturer_module_id', string='Module')
 
+    #Function to create lecturer email address
     @api.depends('staff_number')
     def compute_email(self):
         for rec in self:
@@ -69,7 +70,7 @@ class Lecturer(models.Model):
     def add_lecturer(self):
         new_user = self.env['res.users'].create({
             'name':self.first_name,
-            'login':self.staff_number,
+            'login':self.first_name,
             'new_password':self.staff_number,
         })
         lecturer_group_security = self.env['res.groups'].search([('name', '=', 'Lecturer')])

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
    <odoo>
      <!-- Form view for viewing transcripts -->
-     <record id="view_form_transcript" model="ir.ui.view">
-       <field name="name">Transcript View</field>
-       <field name="model">transcript.student</field>
+     <record id="view_form_classlist" model="ir.ui.view">
+       <field name="name">Class List View</field>
+       <field name="model">list.module</field>
        <field name="arch" type="xml">
-         <form string="Transcript">
+         <form string="Class List">
            <group>
-             <field name='student_transcript_id'/>
+             <field name='l_id'/>
            </group>
            <group>
              <!-- <field name="result_transcript_id" widget="One2many_tags"/>
@@ -16,11 +16,10 @@
 
            <!-- Button that pulls a students list of modules and associated results -->
            <div class="oe_button_box" name="button box"/>
-             <button name="open_student_transcript" string="View transcript"
+             <button name="open_class_list" string="View class list"
                type="object" class="oe_start_button"/>
 
          </form>
        </field>
      </record>
 </odoo>
- 

@@ -3,7 +3,7 @@ from odoo import fields, models, api
 class Transcript(models.Model):
     _name = 'transcript.student'
     _description = 'Transcript'
-    user_id = fields.Many2one('res.users', string='User', readonly=True, states={'draft': [('readonly', False)]}, default=lambda self: self.env.uid)
+    #user_id = fields.Many2one('res.users', string='User', readonly=True, states={'draft': [('readonly', False)]}, default=lambda self: self.env.uid)
 
 
     #Relationships
@@ -15,8 +15,7 @@ class Transcript(models.Model):
     @api.multi
     def open_student_transcript(self):
         for rec in self:
-            #print(rec.student_transcript_id.id)
-
+            print(rec.student_transcript_id.id)
             student = self.env['student.user'].search([('id','=',rec.student_transcript_id.id)])
             return {
                 'name': ('View transcript'),
@@ -27,9 +26,3 @@ class Transcript(models.Model):
                 'view_mode': 'tree,form',
                 'type': 'ir.actions.act_window',
                 }
-
-    # @api.multi
-    # def open_my_transcript(self):
-    #     #current_student = 'student.user'
-    #     print(test)
-    #     #for rec in self:
